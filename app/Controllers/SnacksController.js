@@ -3,12 +3,12 @@ import { snackService } from "../Services/SnackService.js"
 import { setHTML } from "../Utils/Writer.js";
 // import { loadState } from "../Utils/Store.js";
 
-function _drawSnack() {
+function _drawSnacks() {
   console.log('drawing snack')
-  let snack = appState.snack
-  // let template = ''
-  // snack.forEach(s => template += s.ListTemplate)
-  // setHTML('snack', template)
+  let snacks = appState.snacks
+  let template = ''
+  snacks.forEach(s => template += s.ListTemplate)
+  setHTML('snack', template)
 }
 
 function _drawActive() {
@@ -30,6 +30,8 @@ export class SnacksController {
     console.log('hello from the snacks controller')
     _drawActive()
     _drawMySnack()
+    _drawSnacks()
+
 
     appState.on('activeSnack', _drawActive)
     appState.on('mySnack', _drawMySnack)

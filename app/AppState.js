@@ -10,13 +10,13 @@ class AppState extends EventEmitter {
   values = loadState('values', [Value])
 
 /**  @type {import('./Models/Vendr').Snack[]} */
-snack = [
+snacks = [
   new Snack ({name: 'Orange', price: 3.50, img: 'orange.gif'})
 ]
 
 /** @type {import('./Models/Vendr').Snack|null} */
 activeSnack = [ 
-  snack ({name: 'Orange', price: 3.50, img: 'http://images6.fanpop.com/image/photos/34500000/Orange-Fruit-orange-34512881-2260-2175.jpg'})
+  new Snack ({name: 'Orange', price: 3.50, img: './orange.gif'})
 ]
 
 activeSnack = null
